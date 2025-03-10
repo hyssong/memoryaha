@@ -19,21 +19,22 @@ def conv_z2r(z):
     with np.errstate(invalid='ignore', divide='ignore'):
         return (np.exp(2 * z) - 1) / (np.exp(2 * z) + 1)
 
-memory_retrieval = np.array(pd.read_csv('/data/memory_retrieval.csv', header=None))
-causal_relationship = np.array(pd.read_csv('/data/causal_relationship.csv', header=None))
-semantic_similarity = conv_r2z(np.array(pd.read_csv('/data/narrative_feature_semantic_similarity_r.csv', header=None)))
-character_similarity = conv_r2z(np.array(pd.read_csv('/data/narrative_feature_character_similarity_r.csv', header=None)))
-place_similarity = conv_r2z(np.array(pd.read_csv('/data/narrative_feature_place_similarity_r.csv', header=None)))
-visual_similarity = conv_r2z(np.array(pd.read_csv('/data/narrative_feature_visual_similarity_r.csv', header=None)))
-audio_similarity = conv_r2z(np.array(pd.read_csv('/data/narrative_feature_audio_similarity_r.csv', header=None)))
-time_proximity = np.array(pd.read_csv('/data/narrative_feature_time_proximity.csv', header=None))
+directory = '/folder'
+memory_retrieval = np.array(pd.read_csv(directory+'/data/memory_retrieval.csv', header=None))
+causal_relationship = np.array(pd.read_csv(directory+'/data/causal_relationship.csv', header=None))
+semantic_similarity = conv_r2z(np.array(pd.read_csv(directory+'/data/narrative_feature_semantic_similarity_r.csv', header=None)))
+character_similarity = conv_r2z(np.array(pd.read_csv(directory+'/data/narrative_feature_character_similarity_r.csv', header=None)))
+place_similarity = conv_r2z(np.array(pd.read_csv(directory+'/data/narrative_feature_place_similarity_r.csv', header=None)))
+visual_similarity = conv_r2z(np.array(pd.read_csv(directory+'/data/narrative_feature_visual_similarity_r.csv', header=None)))
+audio_similarity = conv_r2z(np.array(pd.read_csv(directory+'/data/narrative_feature_audio_similarity_r.csv', header=None)))
+time_proximity = np.array(pd.read_csv(directory+'/data/narrative_feature_time_proximity.csv', header=None))
 
 # relationship between memory retrieval & causal relationship
-idd = np.where(~np.isnan(memory_retrieval))
-scipy.stats.spearmanr(memory_retrieval[idd], causal_relationship[idd])
+idd = np.where(~np.isnan(causal_relationship))
+scipy.stats.spearmanr(memory_retrieval[idd], causal_relationship[idd], nan_policy='omit')
 
 # visualize pairwise relationship
-df = pd.DataFrame(np.concatenate((scipy.stats.zscore(memory_retrieval[idd].reshape(-1,1)),
+df = pd.DataFrame(np.concatenate((scipy.stats.zscore(memory_retrieval[idd].reshape(-1,1), nan_policy='omit'),
                                   scipy.stats.zscore(causal_relationship[idd].reshape(-1,1)),
                                   scipy.stats.zscore(semantic_similarity[idd].reshape(-1,1)),
                                   scipy.stats.zscore(character_similarity[idd].reshape(-1,1)),
@@ -42,14 +43,14 @@ df = pd.DataFrame(np.concatenate((scipy.stats.zscore(memory_retrieval[idd].resha
                                   scipy.stats.zscore(visual_similarity[idd].reshape(-1,1)),
                                   scipy.stats.zscore(audio_similarity[idd].reshape(-1,1))),1),
                   columns=['memory', 'causal', 'semantic', 'character', 'place', 'time', 'visual', 'audio'])
-
-d = np.array(df.corr(method='spearman'))
+d = scipy.stats.spearmanr(np.array(df), nan_policy='omit')[0]
 d[np.where(np.triu(np.zeros((8,8))+1,1)==0)] = np.nan
 plt.figure(), sns.heatmap(d, vmin=0, vmax=0.87, annot=True)
 plt.xticks([]), plt.yticks([])
 
-
 # explained variance
+df = df.dropna()
+
 y = df['memory']
 X = df[['causal','semantic', 'visual', 'audio', 'character', 'place', 'time']]
 X = sm.add_constant(X)
