@@ -42,7 +42,7 @@ nsubj = len(flist[1])+len(flist[2])+len(flist[3])
 directory = '/foldername'
 
 nroi_cor, nroi_sub = 100, 16
-hrf = 4
+hrf = 4 # 4TR = 4.8s
 mask = niftimask(nroi_cor, nroi_sub, directory)
 
 for groupid in range(1, 3+1):
