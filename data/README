@@ -1,4 +1,5 @@
 sceneindex
+48 segmented events
 - scene: This is Us Season 1 Episode 1 segmented into 48 events.
 - start: Start time of the event. The time index was recorded from Adobe Premiere Pro. To prevent bleeding of audio from one event to the next, manual movie edits were conducted at the start or end of some of the events. The .mp4 files used in the experiment are not shared.
 - duration: Duration of the event.
@@ -8,3 +9,10 @@ sceneindex
 - description: Short event description by the first author.
 - binary indices of which characters appeared and where the event took place.
 
+groupscene
+Three scrambled-order groups
+- run: Indices of 10 fMRI runs.
+- order: Event order within a run. 3 events for run 7 and 5 events for the rest of the runs.
+- sceneid: Scene index corresponds to sceneindex.csv
+- blockid: Scene order within a block was fixed, and block order differed across scrambled-order groups.
+- char: (1) Jack, (2) Kate, (3) Randall, (4) Kevin, (5) Kevin & Kate
