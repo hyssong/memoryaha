@@ -13,6 +13,18 @@ groupscene
 Three scrambled-order groups
 - run: Indices of 10 fMRI runs.
 - order: Event order within a run. 3 events for run 7 and 5 events for the rest of the runs.
-- sceneid: Scene index corresponds to sceneindex.csv
+- sceneid: Scene index corresponds to sceneindex.csv.
 - blockid: Scene order within a block was fixed, and block order differed across scrambled-order groups.
-- char: (1) Jack, (2) Kate, (3) Randall, (4) Kevin, (5) Kevin & Kate
+- char: (1) Jack, (2) Kate, (3) Randall, (4) Kevin, (5) Kevin & Kate.
+
+ahabutton
+Moments of aha button presses, in TR resolution
+Analysis of the aha button press data is demonstrated in: /code/code_ahasynchrony.py
+- subject: 36 fMRI participant index.
+- run: At which fMRI run the button was pressed.
+- scene: Corresponds to "order" in groupscene.csv.
+- TR (scene): Moments of aha button press (in TR) within the scene duration.
+- TR (run): Moments of aha button press (in TR) within the fMRI run duration.
+
+causal_relationship, memory_retrieval, narrative_feature_*
+Event-by-event (48 x 48 matrix) matrix, with events in original order (scene index from 1 to 48)
