@@ -1,0 +1,8 @@
+- scene: This is Us Season 1 Episode 1 segmented into 48 events
+- start: Start time of the event. The time index was recorded from Adobe Premiere Pro. To prevent bleeding of the audio from one event to the next, manual movie editting was conducted at the start or end of some of the events. The .mp4 files used in the experiment are not shared.
+- duration: Duration of each event.
+- nTR: Number of TRs the event was played during the fMRI experiment.
+- importance: Rated importance of the event, averaged across 8 raters.
+- event: Main character(s) of the event.
+- description: Short event description by the first author.
+- binary indices of which characters appeared and where the event took place.
