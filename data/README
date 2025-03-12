@@ -20,7 +20,7 @@ Three scrambled-order groups
 ahabutton
 Moments of aha button presses, in TR resolution
 Analysis of the aha button press data is demonstrated in: /code/code_ahasynchrony.py
-- subject: 36 fMRI participant index. (Some of the subject numbers are skipped not because they were excluded from analyses, but because either the participant did not show up or they did not complete the scan for some reasons.)
+- subject: 36 fMRI participant index. (Some of the subject numbers are skipped not because they were excluded from analyses, but because either the participant did not show up to the experiment or did not complete the entire session.)
 - run: At which fMRI run the button was pressed.
 - scene: Corresponds to "order" in groupscene.csv.
 - TR (scene): Moments of aha button press (in TR) within the scene duration.
