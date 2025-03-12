@@ -1,0 +1,6 @@
+1. code_extractbold.py: extracts BOLD activity time series of voxels within the chosen parcels
+2. code_ahasynchrony.py: process aha button press data (ahabutton.csv) and calculate button press synchrony (Figure 1D)
+3. code_causalitymemory.py: load memory retrieval matrix, causal relationship matrix, and various narrative feature similarity matrices and analyze the relationships between them (Figure 2, Figure S1)
+4. code_hmm.py: conduct hidden Markov model analysis to calculate neural pattern shifts (Figure 3, Figure S2)
+5. code_ahahmmreinst.py: categorize aha button presses based on neural pattern shifts and behavioral retrieval and align neural reinstatement at aha button press moments (Figure 4)
+6. code_ahahmmreinst_stats.R: conduct logistic generalized linear mixed effect models
