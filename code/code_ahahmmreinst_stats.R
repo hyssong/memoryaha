@@ -1,9 +1,11 @@
 # install.packages("lme4")
 # install.packages("Matrix")
 # install.packages("lmerTest")
+# install.packages("mediation")
+library(lmerTest)
 library(lme4)
 library(Matrix)
-library(lmerTest)
+library(mediation)
 data <- read.csv("/Users/hayoungsong/Documents/2024COCO/github/data/summarydata_ahahmmreinst.csv")
 df <- data.frame(
   subject = as.factor(data$subject),
