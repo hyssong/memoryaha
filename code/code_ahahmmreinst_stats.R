@@ -6,7 +6,7 @@ library(lmerTest)
 library(lme4)
 library(Matrix)
 library(mediation)
-data <- read.csv("/Users/hayoungsong/Documents/2024COCO/github/data/summarydata_ahahmmreinst.csv")
+data <- read.csv("/data/summarydata_ahahmmreinst.csv")
 df <- data.frame(
   subject = as.factor(data$subject),
   parcel = as.factor(data$parcel),
