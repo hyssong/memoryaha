@@ -20,6 +20,12 @@ df <- data.frame(
 df$shift12 <- as.integer(df$shift1+df$shift2)
 df <- na.omit(df)
 
+# Figure 4B
+model <- glmer(retrieval ~ reinst + parcel + (1 | subject), data = df, family = binomial)
+summary(model)
+
+model <- glmer(shift2 ~ reinst + parcel + (1 | subject), data = df, family = binomial)
+summary(model)
 
 # Model 1
 model <- glmer(shift2 ~ reinst + parcel + (1 | subject), data = df, family = binomial)
