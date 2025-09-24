@@ -23,15 +23,14 @@ df <- na.omit(df)
 # Figure 4B
 model <- glmer(retrieval ~ reinst + parcel + (1 | subject), data = df, family = binomial)
 summary(model)
+model_reduced_rein <- glmer(retrieval ~ parcel + (1 | subject), data = df, family = binomial)
+anova(model_reduced_rein, model)
 
-model <- glmer(shift2 ~ reinst + parcel + (1 | subject), data = df, family = binomial)
-summary(model)
-
-# Model 1
 model <- glmer(shift2 ~ reinst + parcel + (1 | subject), data = df, family = binomial)
 summary(model)
 model_reduced_rein <- glmer(shift2 ~ parcel + (1 | subject), data = df, family = binomial)
 anova(model_reduced_rein, model)
+
 
 # Model 2
 model <- glmer(retrieval ~ shift2 + reinst + shift2:reinst + parcel + (1 | subject), data = df, family = binomial)
