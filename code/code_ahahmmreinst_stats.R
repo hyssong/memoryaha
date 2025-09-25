@@ -32,7 +32,7 @@ model_reduced_rein <- glmer(shift2 ~ parcel + (1 | subject), data = df, family =
 anova(model_reduced_rein, model)
 
 
-# Model 2
+# Behavioral retrieval ~ Neural reinstatement + Neural pattern shift
 model <- glmer(retrieval ~ shift2 + reinst + shift2:reinst + parcel + (1 | subject), data = df, family = binomial)
 summary(model)
 
@@ -45,9 +45,5 @@ anova(model_reduced_hmm, model)
 model_reduced_inter <- glmer(retrieval ~ shift2 + reinst + parcel + (1 | subject), data = df, family = binomial)
 anova(model_reduced_inter, model)
 
-# Model 3
-model <- glmer(retrieval ~ shift12 + reinst + shift12:reinst + parcel + (1 | subject), data = df, family = binomial)
-summary(model)
-model_reduced_hmm <- glmer(retrieval ~ reinst + shift12:reinst + parcel + (1 | subject), data = df, family = binomial)
-anova(model_reduced_hmm, model)
-
+# Behavioral retrieval ~ Neural reinstatement + Neural pattern shift (-2 TR and -1 TR)
+# swapping "shift2" variable to "shift12"
