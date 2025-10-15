@@ -4,7 +4,7 @@ Preprint can be found [here](https://www.biorxiv.org/content/10.1101/2025.03.12.
 Raw and processed fMRI data are shared in [OpenNeuro](https://openneuro.org/datasets/ds005658).
 
 ## installation
-To run the models and codes, it is necessary to install the Python packages included in environment.yml. We recommend installing conda and executing the following commands. This takes less than a minute in a standard laptop.
+To run the codes, which reproduces results in the manuscript, it is necessary to install the Python packages included in environment.yml. We recommend installing conda and executing the following commands. This takes less than a minute in a standard laptop.
 ```bash
 conda env create -f environment.yml
 conda activate memoryaha
