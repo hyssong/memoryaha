@@ -3,6 +3,14 @@
 Preprint can be found [here](https://www.biorxiv.org/content/10.1101/2025.03.12.642853v1).
 Raw and processed fMRI data are shared in [OpenNeuro](https://openneuro.org/datasets/ds005658).
 
+## installation
+To run the models and codes, it is necessary to install the Python packages included in environment.yml. We recommend installing conda and executing the following commands. This takes less than a minute in a standard laptop.
+```bash
+conda env create -f environment.yml
+conda activate memoryaha
+```
+R v4.4.2 was used to run the R code.
+
 ## code
 - **code_extractbold.py**: extracts BOLD activity time series of voxels within the chosen parcels
 - **code_ahasynchrony.py**: process aha button press data (ahabutton.csv) and calculate button press synchrony (Figure 1D)
