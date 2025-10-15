@@ -12,7 +12,7 @@ Raw and processed fMRI data are shared in [OpenNeuro](https://openneuro.org/data
 - **code_ahahmmreinst_stats.R**: conduct logistic generalized linear mixed effect models
 
 ## data
-**sceneindex**<br>
+**sceneindex**<br />
 48 segmented events<br>
 - scene: This is Us Season 1 Episode 1 segmented into 48 events.
 - start: Start time of the event. The time index was recorded from Adobe Premiere Pro. To prevent bleeding of audio from one event to the next, manual movie edits were conducted at the start or end of some of the events. The .mp4 files used in the experiment are not shared.
@@ -23,7 +23,7 @@ Raw and processed fMRI data are shared in [OpenNeuro](https://openneuro.org/data
 - description: Short event description by the first author.
 - binary indices of which characters appeared and where the event took place.
 
-**groupscene**<br>
+**groupscene**<br />
 Three scrambled-order groups<br>
 - run: Indices of 10 fMRI runs.
 - order: Event order within a run. 3 events for run 7 and 5 events for the rest of the runs.
@@ -31,7 +31,7 @@ Three scrambled-order groups<br>
 - blockid: Scene order within a block was fixed, and block order differed across scrambled-order groups.
 - char: (1) Jack, (2) Kate, (3) Randall, (4) Kevin, (5) Kevin & Kate.
 
-**ahabutton**<br>
+**ahabutton**<br />
 Moments of aha button presses, in TR resolution<br>
 Analysis of the aha button press data is demonstrated in: /code/code_ahasynchrony.py<br>
 - subject: 36 fMRI participant index. (Some of the subject numbers are skipped not because they were excluded from analyses, but because either the participant did not show up to the experiment or did not complete the entire session.)
@@ -40,5 +40,5 @@ Analysis of the aha button press data is demonstrated in: /code/code_ahasynchron
 - TR (scene): Moments of aha button press (in TR) within the scene duration.
 - TR (run): Moments of aha button press (in TR) within the fMRI run duration.
 
-**causal_relationship, memory_retrieval, narrative_feature_*** <br>
+**causal_relationship, memory_retrieval, narrative_feature_*** <br />
 Event-by-event (48 x 48 matrix) matrix, with events in original order (scene index from 1 to 48)
