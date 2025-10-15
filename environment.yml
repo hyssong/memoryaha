@@ -1,0 +1,16 @@
+name: memoryaha
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12.2=hdf0ec26_0_cpython
+  - numpy=1.26.4=py312h7f4fdc5_0
+  - pandas=2.2.2=py312hd77ebd4_0
+  - statsmodels=0.14.2=py312ha86b861_0
+  - seaborn=0.13.2=py312hca03da5_0
+  - pip=24.0=py312hca03da5_0
+  - pip:
+      - matplotlib==3.8.3
+      - scipy==1.12.0
+      - nilearn==0.10.4
+prefix: /opt/anaconda3
